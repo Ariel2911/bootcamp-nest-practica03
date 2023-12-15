@@ -13,7 +13,7 @@ export class AuthService {
     };
   }
 
-  validateUser(username: string, password: string): any {
+  validateUser(username: string, password: string): User {
     if (
       this.testUser.name === username &&
       this.testUser.password === password
