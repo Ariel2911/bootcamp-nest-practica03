@@ -18,17 +18,16 @@ export class AuthService {
       this.testUser.name === username &&
       this.testUser.password === password
     ) {
-      return { userId: this.testUser.id, username: this.testUser.name };
+      return { id: this.testUser.id, name: this.testUser.name };
     }
     return null;
   }
 
   login(user: User) {
     const payload = {
-      username: user.name,
-      sub: user.id,
+      name: user.name,
+      id: user.id,
     };
-
     return {
       access_token: this.jwtService.sign(payload),
     };
